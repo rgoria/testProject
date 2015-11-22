@@ -1,0 +1,20 @@
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+  $.ajax({
+  url:"https://www.kimonolabs.com/api/6etzem6y?apikey=xpjAWoPlrBxCAl1QLMxDxsd7NHRSggJS",
+  crossDomain: true,
+  dataType: "jsonp",
+  success: function (response) {
+    //Do something with the response
+    console.log("Macri: "+ response.results.collection1[0].Macri);
+    $("#macri").html(response.results.collection1[0].Macri);
+    console.log("Scioli: " +response.results.collection1[0].Scioli);
+    $("#scioli").html(response.results.collection1[0].Scioli);
+  },
+  error: function (xhr, status) {
+    //handle errors
+  }
+});</script>
+Macri: <span id="macri"></span>
+<br/>
+Scioli: <span id="scioli"></span>
